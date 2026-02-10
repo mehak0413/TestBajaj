@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BFHL API Frontend — Fibonacci, Prime, LCM, HCF & AI operations." />
+  <title>BFHL Operations</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ─── Loading Overlay ───────────────────────────────────── -->
+  <div id="loading-overlay" class="loading-overlay hidden" aria-live="polite">
+    <div class="spinner"></div>
+    <p class="loading-text">Processing…</p>
+  </div>
+
+  <!-- ─── Main Card ─────────────────────────────────────────── -->
+  <main class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-mark" aria-hidden="true">B</div>
+      <div>
+        <h1 class="title">BFHL Operations</h1>
+        <p class="subtitle">Choose an operation, enter input, and view results</p>
+      </div>
+    </header>
+
+    <!-- Form -->
+    <form id="bfhl-form" class="form" novalidate>
+
+      <!-- Operation Selector -->
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Select Operation</legend>
+
+        <div class="radio-group" role="radiogroup" aria-label="Operation">
+          <label class="radio-card">
+            <input type="radio" name="operation" value="fibonacci" />
+            <span class="radio-card__icon">🔢</span>
+            <span class="radio-card__label">Fibonacci</span>
+          </label>
+
+          <label class="radio-card">
+            <input type="radio" name="operation" value="prime" />
+            <span class="radio-card__icon">✨</span>
+            <span class="radio-card__label">Prime</span>
+          </label>
+
+          <label class="radio-card">
+            <input type="radio" name="operation" value="lcm" />
+            <span class="radio-card__icon">🔗</span>
+            <span class="radio-card__label">LCM</span>
+          </label>
+
+          <label class="radio-card">
+            <input type="radio" name="operation" value="hcf" />
+            <span class="radio-card__icon">🧩</span>
+            <span class="radio-card__label">HCF</span>
+          </label>
+
+          <label class="radio-card">
+            <input type="radio" name="operation" value="AI" />
+            <span class="radio-card__icon">🤖</span>
+            <span class="radio-card__label">AI Question</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Dynamic Input -->
+      <div id="input-section" class="input-section hidden">
+        <label id="input-label" class="input-label" for="input-field">Enter value</label>
+        <input
+          id="input-field"
+          class="input-field"
+          type="text"
+          autocomplete="off"
+          aria-describedby="input-hint"
+        />
+        <span id="input-hint" class="input-hint"></span>
+      </div>
+
+      <!-- Inline Error -->
+      <div id="error-box" class="error-box hidden" role="alert"></div>
+
+      <!-- Submit -->
+      <button id="submit-btn" class="submit-btn" type="submit" disabled>
+        <span class="btn-text">Submit</span>
+        <span class="btn-icon" aria-hidden="true">→</span>
+      </button>
+    </form>
+
+    <!-- Result Section -->
+    <section id="result-section" class="result-section hidden" aria-live="polite">
+      <h2 class="result-heading">Result</h2>
+      <div id="result-content" class="result-content"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built with HTML, CSS &amp; Vanilla JS — No frameworks</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
