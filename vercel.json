@@ -1,0 +1,38 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/health",
+            "dest": "/server.js"
+        },
+        {
+            "src": "/bfhl",
+            "dest": "/server.js",
+            "methods": [
+                "POST"
+            ]
+        },
+        {
+            "src": "/css/(.*)",
+            "dest": "/frontend/css/$1"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/frontend/js/$1"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "/frontend/assets/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        }
+    ]
+}

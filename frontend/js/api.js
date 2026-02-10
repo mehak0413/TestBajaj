@@ -1,9 +1,10 @@
 /**
  * api.js — Single-responsibility: all network requests live here.
  * Backend base URL is configured once in BASE_URL.
+ * Empty string means "same origin" — works on both local and deployed.
  */
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = '';
 
 /**
  * POST /bfhl
